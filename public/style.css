@@ -18,7 +18,6 @@
   height: 92vh;
   display: flex;
 }
-
 .options {
   padding: 1rem;
   display: flex;
@@ -112,4 +111,25 @@
   .left_window {
     display: flex;
   }
+}
+
+#video_grid{
+  flex-grow:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 1rem;
+  background-color:var(--main-dark);
+
+}
+
+video{
+  height:300px;
+  border-radius:1rem;
+  margin:0.5rem;
+  width:400px;
+  object-fit:cover;
+  transform:rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
+  -moz-trandfrom:rotateY(180deg);
 }

@@ -5,9 +5,32 @@ var peer = new Peer(undefined, {
     host: "/",
     port: "443",
 });
+//Web Real Time Chat is how to avoid the glitches in lag
 
 const user = prompt("Enter your name");
+const myVideo=document.createElement("video")
+myVideo.muted=true
+//when it is closed it creates the element(displays our video)
+let myStream;
+navigator.mediaDevices.getUserMedia({
+    audio:true,
+    video:true,
+}).then((stream)=>{
+    myStream=stream
+})
 
+function addVideoStream (video,stream){
+video.srcObject=stream
+video.addEventListener("loadedmetadata",()=>{
+    video.play()
+    $("#video_grid").append(video)
+})
+}
+// play continually play
+//Event listen continuaslly check
+//double parathesis means that parameter
+//conatin audio and video stream
+//passing an object through it
 $(function () {
     $("#show_chat").click(function () {
         $(".left-window").css("display", "none")
